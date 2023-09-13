@@ -7,16 +7,21 @@
 
 - Font weights: 
 Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
 
 - Line heights: 
 Default: 1
+Small: 1.05
+Paragraph default: 1.6
 
 
 --- 02 COLORS
 
 - Primary: #e67e22
 - Tints: #fdf2e9
-- Shades
+- Shades: #cf711f
 - Accents: 
 - Greys 
 #555
@@ -25,6 +30,7 @@ Default: 1
 --- 05 SHADOWS 
 
 --- 06 BORDER_RADIUS
+Default: 9px
 
 --- 07 WHITESPACE
 
@@ -47,12 +53,15 @@ html {
 }
 
 body {
-    font-family: sans-serif;
+    font-family: "Rubik", sans-serif;
     line-height: 1;
     font-weight: 400;
     color: #555;
 }
 
+
+/* ******************************** */
+/* some notes */
 /*
 .test {
     background-color: red;
@@ -66,29 +75,175 @@ body {
     /* by default if we dont set the size of root element that is the font sixe of the html element the 1 rem = 16px. Therefore 50 rem = 800px */
     /* But now we have set the font size of the html element to 10px so 1rem = 10px now. So all the properties which were defined using rem will adjust accordingly */
 /* } */
+/* ******************************** */
 
+
+/* ******************************** */
+/* GENERAL REUSABLE COMPONENTS */
+/* ******************************** */
+
+
+.container {
+    /* 1140px is standard, even 1200px is standard for container */
+    max-width: 120rem;
+    padding: 0 3.2rem;
+    margin: 0 auto;
+}
+
+
+
+.grid {
+    display: grid;
+    gap: 9.6rem;
+}
+
+.grid--2-cols{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols{
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols{
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.heading-primary, .heading-secondary {
+    font-weight: 700;
+    color: #333;
+    letter-spacing: -0.5px;
+}
+.heading-primary {
+    font-size: 5.2rem;
+    line-height: 1.05;
+    margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+    font-size: 4.4rem;
+    line-height: 1.2rem;
+
+}
+
+.subheading {
+
+
+}
+
+
+.btn:link, btn:visited {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 1.6rem 3.2rem;
+    border-radius: 150px;
+    font-weight: 600;
+
+    /*  Put transition on original "state" */
+    transition: background-color 0.3s;
+}
+
+.btn--full:link, .btn--full:visited {
+    background-color: #e67e22;
+    color: #fff;
+}
+
+.btn--full:hover, .btn--full:active {
+    background-color: #cf711f;
+
+}
+
+.btn--outline:link, .btn--outline:visited {
+    background-color: #fff;
+    color: #555;
+}
+
+.btn--outline:hover, .btn--outline:active {
+    background-color: #fdf2e9;
+    /* border: 3px solid #fff; */
+    /*  Trick to add border inside: inset keyword used will add the shadow inside of the element */
+    box-shadow: inset 0 0 0 3px #fff;
+}
+
+.margin-right-sm {
+    margin-right: 1.6rem !important;
+}
+
+
+
+
+
+/* ******************************** */
+/* HEADER*/
+/* ******************************** */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fdf2e9;
+    /* Because we want the header to be sticky later */
+    height: 9.6rem;
+    padding: 0 4.8rem;
+}
+.logo {
+    height: 2.2rem;
+}
+
+
+/* ******************************** */
+/* NAVIGATION SECTION */
+/* ******************************** */
+
+.main-nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+}
+
+.main-nav-link:link, .main-nav-link:visited {
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 1.8rem;
+    transition: all 0.3s;
+}
+
+.main-nav-link:hover, .main-nav-link:active {
+    color: #cf711f;
+}
+
+.main-nav-link.nav-cta:link, .main-nav-link.nav-cta:visited {
+    padding: 1.2rem 2.4rem;
+    border-radius: 9px;
+    color: #fff;
+    background-color: #e67e22;
+}
+
+.main-nav-link.nav-cta:hover, .main-nav-link.nav-cta:active {
+    background-color: #cf711f;
+}
+
+/* ******************************** */
+/* HERO SECTION */
+/* ******************************** */
 
 .section-hero {
     background-color: #fdf2e9;
-    padding: 9.6rem 0;
+    padding: 4.8rem 0 9.6rem 0;
 }
 
 .hero {
     max-width: 130rem;
     margin: 0 auto;
+    padding: 0 3.2rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 9.6rem;
     align-items: center;
-}
-
-.heading-primary {
-    font-size: 5.2rem;
-    font-weight: 700;
-    line-height: 1.05;
-    color: #333;
-    letter-spacing: -0.5px;
-    margin-bottom: 3.2rem;
 }
 
 .hero-description {
@@ -97,18 +252,58 @@ body {
     margin-bottom: 4.8rem;
 }
 
-.btn:link, btn:visited {
-    background-color: #e67e22;
-    display: inline-block;
-    color: #fdf2e9;
-    text-decoration: none;
-    font-size: 2rem;
-    padding: 1.6rem 3.2rem;
-    border-radius: 150px;
-}
-
 .hero-img {
     width: 100%;
+}
+
+.delivered-meals {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    margin-top: 8rem;
+}
+
+.delivered-imgs {
+    display: flex;
+}
+
+.delivered-imgs img {
+    height: 4.8rem;
+    width: 4.8rem;
+    border-radius: 50%;
+    margin-right: -1.6rem;
+    border: 3px solid #fdf2e9;
+}
+
+.delivered-imgs img:last-child {
+    margin: 0;
+}
+
+.delivered-text {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.delivered-text span {
+    color: #cf711f;
+    font-weight: 700;
+}
+
+
+
+/* ******************************** */
+/* HOW IT WORKS SECTION */
+/* ******************************** */
+
+.section-how {
+    padding: 9.6rem 0;
+}
+
+.step-img {
+    width: 50%;
 
 }
+
+
+
+
 
