@@ -1,0 +1,114 @@
+/* 
+
+--- 01 TYPOGRAPHY SYSTEM
+
+- Font sizes (px):
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 20 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights: 
+Default: 400
+
+- Line heights: 
+Default: 1
+
+
+--- 02 COLORS
+
+- Primary: #e67e22
+- Tints: #fdf2e9
+- Shades
+- Accents: 
+- Greys 
+#555
+#333
+
+--- 05 SHADOWS 
+
+--- 06 BORDER_RADIUS
+
+--- 07 WHITESPACE
+
+- SPACING SYSTEM (px):
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* font-size: 10px; */
+    /* 10px/16px = 0.625 = 62.5% */
+    /* Percentage of user's browser  font-size settings */
+    font-size: 62.5%;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    color: #555;
+}
+
+/*
+.test {
+    background-color: red;
+    /* width: 1000px; */
+    /* max-width: 1000px; */
+    
+    /* max-width: 50rem;
+    padding: 4rem;
+    font-size: 2rem;
+    color: #fff; */
+    /* by default if we dont set the size of root element that is the font sixe of the html element the 1 rem = 16px. Therefore 50 rem = 800px */
+    /* But now we have set the font size of the html element to 10px so 1rem = 10px now. So all the properties which were defined using rem will adjust accordingly */
+/* } */
+
+
+.section-hero {
+    background-color: #fdf2e9;
+    padding: 9.6rem 0;
+}
+
+.hero {
+    max-width: 130rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9.6rem;
+    align-items: center;
+}
+
+.heading-primary {
+    font-size: 5.2rem;
+    font-weight: 700;
+    line-height: 1.05;
+    color: #333;
+    letter-spacing: -0.5px;
+    margin-bottom: 3.2rem;
+}
+
+.hero-description {
+    font-size: 2rem;
+    line-height: 1.6;
+    margin-bottom: 4.8rem;
+}
+
+.btn:link, btn:visited {
+    background-color: #e67e22;
+    display: inline-block;
+    color: #fdf2e9;
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 1.6rem 3.2rem;
+    border-radius: 150px;
+}
+
+.hero-img {
+    width: 100%;
+
+}
+
