@@ -1,0 +1,229 @@
+/* 
+
+--- 01 TYPOGRAPHY SYSTEM
+
+- Font sizes (px):
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 20 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights: 
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+- Line heights: 
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+
+- Letter spacing
+-0.5px
+0.75px
+
+
+--- 02 COLORS
+
+- Primary: #e67e22
+- Tints: 
+#fdf2e9
+#fae5d3
+
+
+
+
+- Shades: #cf711f
+- Accents: 
+- Greys 
+#555
+#333
+
+--- 05 SHADOWS 
+
+--- 06 BORDER_RADIUS
+Default: 9px, 19px
+
+--- 07 WHITESPACE
+
+- SPACING SYSTEM (px):
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* font-size: 10px; */
+    /* 10px/16px = 0.625 = 62.5% */
+    /* Percentage of user's browser  font-size settings */
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    color: #555;
+}
+
+
+/* ******************************** */
+/* some notes */
+/*
+.test {
+    background-color: red;
+    /* width: 1000px; */
+    /* max-width: 1000px; */
+    
+    /* max-width: 50rem;
+    padding: 4rem;
+    font-size: 2rem;
+    color: #fff; */
+    /* by default if we dont set the size of root element that is the font sixe of the html element the 1 rem = 16px. Therefore 50 rem = 800px */
+    /* But now we have set the font size of the html element to 10px so 1rem = 10px now. So all the properties which were defined using rem will adjust accordingly */
+/* } */
+/* ******************************** */
+
+
+/* ******************************** */
+/* GENERAL REUSABLE COMPONENTS */
+/* ******************************** */
+
+
+.container {
+    /* 1140px is standard, even 1200px is standard for container */
+    max-width: 120rem;
+    padding: 0 3.2rem;
+    margin: 0 auto;
+}
+
+
+
+.grid {
+    display: grid;
+    column-gap: 6.4rem;
+    row-gap: 9.6rem;
+}
+
+.grid--2-cols{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols{
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols{
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--center-v {
+    align-items: center;
+
+}
+
+.heading-primary, .heading-secondary, .heading-tertiary {
+    font-weight: 700;
+    color: #333;
+    letter-spacing: -0.5px;
+}
+.heading-primary {
+    font-size: 5.2rem;
+    line-height: 1.05;
+    margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+    font-size: 4.4rem;
+    line-height: 1.2;
+    margin-bottom: 9.6rem;
+}
+
+.heading-tertiary {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 3.2rem;
+}
+
+.subheading {
+    display: block;
+    font-size: 3.4rem;
+    font-weight: 500;
+    color: #cf711f;
+    text-transform: uppercase;
+    margin-bottom: 1.6rem;
+    letter-spacing: 0.75px;
+}
+
+
+.btn:link, btn:visited {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 1.6rem 3.2rem;
+    border-radius: 150px;
+    font-weight: 600;
+
+    /*  Put transition on original "state" */
+    transition: all 0.4s;
+}
+
+.btn--full:link, .btn--full:visited {
+    background-color: #e67e22;
+    color: #fff;
+}
+
+.btn--full:hover, .btn--full:active {
+    background-color: #cf711f;
+
+}
+
+.btn--outline:link, .btn--outline:visited {
+    background-color: #fff;
+    color: #555;
+}
+
+.btn--outline:hover, .btn--outline:active {
+    background-color: #fdf2e9;
+    /* border: 3px solid #fff; */
+    /*  Trick to add border inside: inset keyword used will add the shadow inside of the element */
+    box-shadow: inset 0 0 0 3px #555;
+}
+
+.link:link, .link:visited {
+    display: inline-block;
+    color: #e67e22;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+    transition: all 0.4s;
+}
+
+.link:hover, .link:active {
+    color: #cf711f;
+    border-bottom: 1px solid transparent;
+}
+
+
+
+/*  HELPER CLASSES / SETTINGS */
+
+.margin-right-sm {
+    margin-right: 1.6rem !important;
+}
+
+.margin-bottom-md {
+    margin-bottom: 4.4rem !important;
+}
+
+.center-text {
+    text-align: center;
+}
+
+strong {
+    font-weight: 500;
+}
