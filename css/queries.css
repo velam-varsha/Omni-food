@@ -138,10 +138,11 @@ rem should not be used in media queries as it contains some bugs and some websit
     /* MOBILE NAVIGATION */
     .btn-mobile-nav {
         display: block;
+        z-index: 9999;
     }
 
     .main-nav {
-        background-color: #ffffffa3;
+        background-color: rgba(255, 255, 255, 0.97);
         position: absolute;
         top: 0;
         left: 0;
